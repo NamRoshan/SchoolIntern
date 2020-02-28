@@ -1,6 +1,6 @@
 
 <?php 
- $conn=mysqli_connect("localhost","root","Roshan12!@","dev_school");
+  include('db.php');
  echo $subject=$_POST['subject'];
  echo $scl_class=$_POST['scl_class'];
 // $query=mysqli_query($conn,"select * from states where country_id='$country_id'");
