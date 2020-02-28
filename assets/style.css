@@ -1,0 +1,87 @@
+body{
+   background:#fffef6;
+}
+.heading{
+	text-align: center;
+	padding:15px 0px;
+	font-size: 25px;
+}
+
+.card-form{
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height:100vh ;
+}
+@media screen and (max-width: 767px){
+	.card-form{
+		height: auto;
+		display: block;
+	}
+}
+
+.card-form .card-box{
+	border: 1px solid #cecdc2;
+   	max-width: 60%;
+    flex-grow: 1;
+	flex-basis: 60%;	
+}
+@media screen and (max-width: 767px){
+	.card-form .card-box{
+		max-width: 100%;
+	}
+}
+
+.card-form .tbl{
+	border-top: 1px solid #cecdc2;
+	padding: 25px 35px;
+	background: white;
+	border-radius: 4px;
+}
+.tbl .form-group {
+	position: relative;
+}
+.tbl .form-group select{
+	height: 45px;
+	position: relative;
+	padding: 0.5rem 0.75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color:#fff;
+	background-clip: padding-box;
+	border: 1px solid #63b076;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	color:gray;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.tbl .form-group label{
+	color: #0d822a;
+}
+.tbl .form-group form-control:focus-out,.tbl .form-group form-control:foucus{
+	background: gray;
+	border-color: gray;
+}
+.tbl .form-group select:focus{
+   border-color: #04f73e;
+   box-shadow: none;
+}
+.tbl .form-group select:visited{
+   border-color: #04f73e;
+   box-shadow: none;
+}
+.tbl .form-group:after{
+	position: absolute;
+	content: "";
+	top: 53px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #adadad transparent transparent transparent;
+}
+
