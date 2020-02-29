@@ -1,13 +1,18 @@
 
 <?php 
- require_once('inc/db.php'); echo $subject=$_POST['subject'];
- echo $scl_class=$_POST['scl_class'];
- echo $topic=$_POST['topic'];
-// $query=mysqli_query($conn,"select * from states where country_id='$country_id'");
- $query=mysqli_query($obj->con,"SELECT * FROM education WHERE subject='$subject' AND class=$scl_class AND topic='$topic'");
-while ($row=mysqli_fetch_array($query)) {
-     echo " 
- 
-         <option value='" .$row['sub_topic']."'>". $row['sub_topic'] ."</option>";
-}
+ require_once('inc/action.php');
+ $where = array(  
+              'class'     =>    $_POST['scl_class'],
+              'topic'   =>     $_POST['topic']
+               );  
+              
+   $single_data = $obj->select_where("education","sub_topic", $where);  
+
+     // var_dump($single_data);
+   foreach($single_data as $row)  
+   { 
+       echo " 
+
+			<option value='" .$row['sub_topic']."'>". $row['sub_topic'] ."</option>";
+     }  
  ?>

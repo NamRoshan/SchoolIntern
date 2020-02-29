@@ -14,6 +14,25 @@
 			}
 
 		}
+
+	    public function select_where($table_name,$column_name, $where_condition)  
+      	{  
+           $condition = '';  
+           $array = array(); 
+           foreach($where_condition as $key => $value)  
+           {  
+                $condition .= $key . " = '".$value."' AND ";  
+           }  
+           $condition = substr($condition, 0, -5); 
+
+           $query = "SELECT ".$column_name." FROM ".$table_name." WHERE " . $condition." GROUP BY ".$column_name." HAVING COUNT(".$column_name.")";  
+           $result = mysqli_query($this->con, $query);  
+           while($row = mysqli_fetch_array($result))  
+           {  
+                $array[] = $row;  
+           }  
+           return $array;  
+     	} 
 	}
 
 	//To take value form form

@@ -1,5 +1,18 @@
 <?php include('header.php');
-      require_once('inc/db.php');
+      require_once('inc/action.php');
+
+
+ $where = array(  
+              'class'     =>    1 
+               );  
+              
+               $single_data = $obj->select_where("education","subject", $where);  
+
+                 // var_dump($single_data);
+               foreach($single_data as $row)  
+               { 
+                 var_dump($row['subject']);
+                 }  
 ?>
  
 <div class="container">
@@ -12,7 +25,7 @@
        <div class="tbl" >
           <div class="form-group">
               <label for="scl_class">Select Class</label>
-                  <select name="scl_class" id="scl_class" class="form-control" >
+              <select name="scl_class" id="scl_class" class="form-control" >
               <?php 
               $query=mysqli_query($obj->con,"select class from education group by class having count(class)");
               while ($row=mysqli_fetch_array($query)) {

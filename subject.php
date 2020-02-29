@@ -1,16 +1,19 @@
 
 <?php 
-  require_once('inc/db.php');
- echo $subject=$_POST['subject'];
- echo $scl_class=$_POST['scl_class'];
-// $query=mysqli_query($conn,"select * from states where country_id='$country_id'");
- // select subject from education where class=1 group by subject having count(subject)>1 
- $query=mysqli_query($obj->con,"select topic from education where class=$scl_class and subject='$subject' group by topic having count(topic)");
 
-  // $query=mysqli_query($conn,"SELECT * FROM education WHERE subject='$subject' AND class=$scl_class");
-while ($row=mysqli_fetch_array($query)) {
-     echo " 
- 
-         <option value='" .$row['topic']."'>". $row['topic'] ."</option>";
-}
+require_once('inc/action.php');
+ $where = array(  
+              'class'     =>    $_POST['scl_class'],
+              'subject'   =>     $_POST['subject']
+               );  
+              
+   $single_data = $obj->select_where("education","topic", $where);  
+
+     // var_dump($single_data);
+   foreach($single_data as $row)  
+   { 
+       echo " 
+
+			<option value='" .$row['topic']."'>". $row['topic'] ."</option>";
+     }  
  ?>
