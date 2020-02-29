@@ -1,20 +1,6 @@
 <?php include('header.php');
       require_once('inc/action.php');
-
-
- $where = array(  
-              'class'     =>    1 
-               );  
-              
-               $single_data = $obj->select_where("education","subject", $where);  
-
-                 // var_dump($single_data);
-               foreach($single_data as $row)  
-               { 
-                 var_dump($row['subject']);
-                 }  
-?>
- 
+ ?>
 <div class="container">
 
 <div>
