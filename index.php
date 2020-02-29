@@ -12,13 +12,16 @@
               <label for="scl_class">Select Class</label>
                   <select name="scl_class" id="scl_class" class="form-control" >
               <?php 
-              $conn=mysqli_connect("localhost","root","Roshan12!@","dev_school");
-              $query=mysqli_query($conn,"select * from education");
+              include('db.php');
+              $query=mysqli_query($conn,"select class from education group by class having count(class)");
               while ($row=mysqli_fetch_array($query)) {
              
              ?>
              <option value="<?php echo $row['class'] ?>"><?php echo $row['class'] ?></option>
            <?php } ?>
+
+
+           
            </select>
           </div>
    
