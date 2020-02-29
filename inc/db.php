@@ -1,5 +1,5 @@
 <?php
-	class Database{
+	class DB{
 		public $con;
 		public function __construct(){
 			$this->con = mysqli_connect("localhost","root","Roshan12!@","dev_school");

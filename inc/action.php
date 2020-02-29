@@ -1,6 +1,6 @@
 <?php
 	include "db.php";
-	class DataOperation extends Database{
+	class DataOperation extends DB{
 		public function insert_record($table, $fields){
 
 			$sql =	"";
