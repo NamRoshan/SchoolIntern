@@ -1,4 +1,6 @@
-<?php include('header.php');?>
+<?php include('header.php');
+      require_once('inc/db.php');
+?>
  
 <div class="container">
 
@@ -12,8 +14,7 @@
               <label for="scl_class">Select Class</label>
                   <select name="scl_class" id="scl_class" class="form-control" >
               <?php 
-              include('db.php');
-              $query=mysqli_query($conn,"select class from education group by class having count(class)");
+              $query=mysqli_query($obj->con,"select class from education group by class having count(class)");
               while ($row=mysqli_fetch_array($query)) {
              
              ?>

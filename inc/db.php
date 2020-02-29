@@ -12,5 +12,5 @@
 			// }
 		}
 	}
-	// $obj = new Database;
+	$obj = new Database;
 ?>

@@ -1,11 +1,11 @@
 
 <?php 
-  include('db.php');
+  require_once('inc/db.php');
  echo $subject=$_POST['subject'];
  echo $scl_class=$_POST['scl_class'];
 // $query=mysqli_query($conn,"select * from states where country_id='$country_id'");
  // select subject from education where class=1 group by subject having count(subject)>1 
- $query=mysqli_query($conn,"select topic from education where class=$scl_class and subject='$subject' group by topic having count(topic)");
+ $query=mysqli_query($obj->con,"select topic from education where class=$scl_class and subject='$subject' group by topic having count(topic)");
 
   // $query=mysqli_query($conn,"SELECT * FROM education WHERE subject='$subject' AND class=$scl_class");
 while ($row=mysqli_fetch_array($query)) {
